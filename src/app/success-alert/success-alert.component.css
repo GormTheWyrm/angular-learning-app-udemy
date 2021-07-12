@@ -1,0 +1,10 @@
+*{
+    background-color: lightgreen;
+    /* width: max-content; */
+    
+}
+div{
+    border: 2px solid green;
+    padding: .1em;
+    margin: 1em;
+}

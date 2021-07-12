@@ -1,0 +1,38 @@
+<div class="main-div">
+    <button [disabled]="!allowNewServer" [disabled]="newServerName==''" (click)="addNewServer()" (click)="onCreateServer()">
+        Add new Server
+    </button>
+    <p>New Server Name: {{newServerName}}</p>
+    <p [innerText]="serverCreationStatus" *ngIf="serverCreated"></p>
+    <!--  -->
+    <label for="two-way">Two Way data binding with ngModel</label>
+    <input type="text" [(ngModel)]="newServerName" name="two-way">
+    <!-- I should change css... -->
+    <br>
+    <label for="one-way">One Way data binding with $event</label>
+     <input type="text" name="one-way" (input)="onUpdateServerName($event)" placeholder="placeholder server name">
+   
+    <app-server *ngFor="ser of servers"></app-server>
+</div>
+
+
+
+<!-- old experiment, should be moved... -->
+<hr>
+<p>Username: {{user}}</p>
+<input type="text" [(ngModel)]="user" placeholder="username">
+<button (click)="user=''" [disabled]="user==''" >reset username</button>
+<br>
+<textarea name="" id="" cols="20" [rows]="user.length/2 || 1"></textarea>
+<!-- just fiddlign with property binding -->
+<!-- still need to relearn how to set classes... -->
+
+<hr>
+<h3>Assignment: Toggle Log</h3>
+<button (click)="toggleLog()">Toggle Details</button>
+<p *ngIf="logOpen" >
+    Coding Challenge Details: Log button clicks for toggle button and list output 
+</p>
+<div *ngFor="let l of logs">
+    <p [ngStyle]="{backgroundColor: listBlue(l)}" [ngClass]="{whiteText: l.id>4}">id: {{l.id}} Details: {{l.action}} timestamp: {{l.timestamp}}</p>
+</div>

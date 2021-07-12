@@ -1,0 +1,16 @@
+.main-div{
+    border: 5px solid honeydew;
+    /* background-color: aliceblue; */
+    padding: .5em;
+}
+button:disabled{
+    color: grey;
+}
+button{
+    color: yellowgreen;
+}
+
+/* toggle challenge */
+.whiteText{
+color: white;
+}

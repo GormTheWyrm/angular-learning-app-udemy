@@ -1,0 +1,10 @@
+*{
+    background-color: lightcoral;
+    /* width: fit-content; */
+    /* width: 200px; */
+}
+div{
+border: 2px solid red;
+padding: .1em;
+margin: 1em;
+}
