@@ -1,0 +1,14 @@
+<input type="text" name="countryName" id="countryName" #countryNameInput>
+<!-- localreference can be used within template -->
+
+<button (click)="countryCreated(countryNameInput.value)">Create Country</button>
+
+    <app-country *ngFor="let c of countries" [cName]="c" (msg)="msgAdded($event)"></app-country>
+
+   
+<p *ngFor="let msg of msgLog" >{{msg}}</p>
+<hr>
+<input type="text" name="ex" id="ex" 
+#exampleInput placeholder="example"
+>
+<button (click)="showExample(exampleInput)"> click</button>

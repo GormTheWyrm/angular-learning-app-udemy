@@ -1,0 +1,32 @@
+<div>
+    <p>{{countryName}}</p>
+    <span>Leader: </span>
+    <input type="text" [(ngModel)]="leader">
+    <button (click)="appoint()">Appoint Leader</button>
+    <br>
+    <label for="gov">Choose a Government Type</label>
+    <select name="gov" id="gov" [(ngModel)]="governmentType">
+        <option value="none">No Government</option>
+        <option value="dem">Democracy</option>
+        <option value="rep">Republic</option>
+        <option value="dic">Dictatorship</option>
+        <option value="oli">Oligarchy</option>
+    </select>
+    <!-- ngswitch -->
+    <div [ngSwitch]="governmentType">
+        <p *ngSwitchCase="'none'">Anarchy!</p>
+        <p *ngSwitchCase="'dem'">For the People, by the People!!</p>
+        <p *ngSwitchCase="'rep'">For The Republic!</p>
+        <p *ngSwitchCase="'dic'">Glorious Leader Senpai!</p>
+        <p *ngSwitchCase="'oli'">Glory to the Great Houses!</p>
+    </div>
+    <div [ngSwitch]="leader.length">
+        <p *ngSwitchCase="'0'">Anarchy!</p>
+        <p *ngSwitchCase="'1'">A leader emerges!</p>
+        <p *ngSwitchCase="'2'">A leader emerges!!</p>
+        <p *ngSwitchCase="'3'">A leader emerges!!!</p>
+        <!-- not possible to do > expression... though a function could return true or whatnot -->
+        <p *ngSwitchDefault>A good name</p>
+
+    </div>
+</div>
